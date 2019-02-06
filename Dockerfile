@@ -1,13 +1,7 @@
-FROM python:3.7-alpine
+from python:3.7.2-alpine3.8
 
-COPY requirements.txt .
-
-RUN apk add --no-cache bash py2-pip \
-	&& pip3 install --upgrade pip \
-	&& pip3 install --user -r requirements.txt
-
-COPY app/ app
-
-EXPOSE 5000
-
-ENTRYPOINT ["python3", "app/run.py"]
+ADD . /app/
+WORKDIR /app/
+RUN pip install .
+RUN apk add --no-cache build-base
+CMD ["python", "paint_calculator/run.py"]
