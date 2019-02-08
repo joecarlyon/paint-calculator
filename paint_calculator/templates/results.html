@@ -1,33 +1,46 @@
 {% extends "base.html" %}
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static',  filename='js/result-injector.js') }}"></script>
+{% endblock %}
 {% block title %}Results!{% endblock %}
-{% block body %}
 
-<table name="Results" class="table">
-    <tr>
-        <th>Room #</th>
-        <th>Amount of Feet to Paint</th>
-        <th>Gallons Required</th>
-    </tr>
-    {% for row in all_data %}
-    <tr>
-        <td>
-            {{ row['room'] }}
-        </td>
-        <td>
-            {{ row['ft'] }}
-        </td>
-        <td>
-            {{ row['gallons'] }}
-        </td>
-    </tr>
-    {% endfor %}
-</table>
-
-<h5>Total Gallons Required: {{ total_gallons_required }}</h5>
-
-<div style="text-align: center">
-    <form action="/">
+{% block page_content %}
+  <var style="display:none" id="dimensions">{{ stored_data }}</var>
+  <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#resultsModal">View Results</button>
+  <div class="modal fade" id="resultsModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="moda1">&times;</button>
+          <h4 class="modal-title">Paint Calculation Results</h4>
+        </div>
+        <div class="modal-body">
+          <table name="Results" class="table">
+            <tr>
+              <th>Room #</th>
+              <th>Amount of Feet to Paint</th>
+              <th>Gallons Required</th>
+            </tr>
+              {% for row in dimensions_data %}
+                <tr id={{ row }}>
+                  <td class="room-number"></td>
+                  <td class="room-feet"></td>
+                  <td class="room-total-gallons"></td>
+                </tr>
+              {% endfor %}
+            </table>
+            <h5 id="sumGallons">Total Gallons Required: </h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="close btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center">
+      <form action="#" method="post">
         <input type="submit" value="Home"/>
-    </form>
-</div>
+      </form>
+  </div>
 {% endblock %}
