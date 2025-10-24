@@ -4,7 +4,7 @@ The **Paint Calculator** is a hypothetical project that calculates how many gall
 
 ## Requirements
 
-* Python 3 (not 2)
+* Python 3
 * Pip
 
 ## What we're looking for
@@ -22,7 +22,7 @@ Because each applicant's code should be secret from one another, we should not s
 
 1. Clone the repo (do not fork)
 2. Create a new public repo on Github
-3. Add the new repo as as a new remote
+3. Add the new repo as a new remote
 * `git remote add acme <url>`
 4. Initialize the new repo with what is cloned
 * `git push acme master`
