@@ -11,11 +11,10 @@ The **Paint Calculator** is a hypothetical project that calculates how many gall
 
 * Install Python / Pip
 * Run application
-* Write tests against the application. They do not have to be in Python, and should be in whatever language you are most comfortable with.
-* Write a test plan for the application.  You are free to determine the structure and length of the test plan.
+* Write unit tests against the application.
+* Write playwright E2E tests against the application
 * You are allowed to change any of the source code as you see fit to make things easier for yourself. You are encouraged to fix any bugs you discover.
 * Explain any problems you had while writing the tests, and what you did to make it easier. Pointing to localhost for the application is OK.
-* What would be the proper level of execution for tests of this application?  If this differs from the testing level you wrote tests for, please explain where they would be better suited.
 
 ## Instructions
 
