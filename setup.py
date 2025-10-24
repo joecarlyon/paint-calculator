@@ -1,14 +1,13 @@
-
 from setuptools import setup
-import os
 
 version = "1.0.0"
 
 requirements = [
-	"Flask==1.0.2",
-	"Flask-Bootstrap==3.3.7.1"
+    "Flask==1.0.2",
+    "Flask-Bootstrap==3.3.7.1",
+    "MarkupSafe==2.0.1",
+    "itsdangerous==2.0.1"
 ]
-
 
 setup(name='paint-calculator',
       version=version,
